@@ -102,7 +102,7 @@ assert.deepEqual(
         form: {
           content: [
             { reference: 'Purchaser’s Obligations' }
-          //                     ^
+          //                       ^
           ]
         }
       }
