@@ -9,11 +9,12 @@
     "defence-cli": "^3.0.1",
     "nyc": "^15.0.1",
     "replace-require-self": "^1.1.1",
-    "standard": "^14.3.3"
+    "standard": "^14.3.3",
+    "standard-markdown": "^6.0.0"
   },
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text npm run test",
-    "lint": "standard",
+    "lint": "standard && standard-markdown",
     "test": "cat README.md | defence -i javascript | replace-require-self | node"
   }
 }

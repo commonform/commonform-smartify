@@ -16,7 +16,7 @@ You may want to clone a form before smartifying: `var smartified = JSON.parse(JS
 var smartify = require('commonform-smartify')
 var assert = require('assert')
 
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({ content: ["The package's first test!"] }),
   { content: ['The package’s first test!'] }
   //                      ^
@@ -26,9 +26,9 @@ assert.deepEqual(
 Quotation marks after uses, definitions, and references:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({ content: [{ use: 'Purchaser' }, "'s obligations"] }),
-  { content: [{ use : 'Purchaser' }, '’s obligations'] }
+  { content: [{ use: 'Purchaser' }, '’s obligations'] }
   //                                  ^
 )
 ```
@@ -36,7 +36,7 @@ assert.deepEqual(
 Multiple quotation marks in one string:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({ content: ["What's mine ain't yours."] }),
   { content: ['What’s mine ain’t yours.'] }
   //               ^          ^
@@ -46,7 +46,7 @@ assert.deepEqual(
 Double quotes:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({ content: ['The product comes "as is".'] }),
   { content: ['The product comes “as is”.'] }
   //                             ^     ^
@@ -56,7 +56,7 @@ assert.deepEqual(
 Quotes in definitions and term uses:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({
     content: [
       { definition: "Purchaser's Name" },
@@ -79,10 +79,10 @@ assert.deepEqual(
 Recurses the full form:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({
     content: [
-      { 
+      {
         heading: "Purchaser's Obligations",
         form: { content: ['First Child'] }
       },
@@ -93,7 +93,7 @@ assert.deepEqual(
   }),
   {
     content: [
-      { 
+      {
         heading: 'Purchaser’s Obligations',
         //                 ^
         form: { content: ['First Child'] }
@@ -114,7 +114,7 @@ assert.deepEqual(
 Leaves blanks alone:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({ content: [{ blank: '' }] }),
   { content: [{ blank: '' }] }
 )
@@ -123,7 +123,7 @@ assert.deepEqual(
 Headings:
 
 ```javascript
-assert.deepEqual(
+assert.deepStrictEqual(
   smartify({
     content: [
       {
