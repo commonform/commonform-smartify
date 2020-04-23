@@ -29,7 +29,7 @@ Quotation marks after uses, definitions, and references:
 assert.deepStrictEqual(
   smartify({ content: [{ use: 'Purchaser' }, "'s obligations"] }),
   { content: [{ use: 'Purchaser' }, '’s obligations'] }
-  //                                  ^
+  //                                 ^
 )
 ```
 
