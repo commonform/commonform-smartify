@@ -1,6 +1,6 @@
 # commonform-smartify
 
-replace straight quotes with typographers’ quotes in Common Forms
+replace ASCII punctuation with Unicode punctuation quotes in Common Forms
 
 ## Notes
 
@@ -76,6 +76,62 @@ assert.deepStrictEqual(
 )
 ```
 
+Three hyphens make an em-dash:
+
+```javascript
+assert.deepStrictEqual(
+  smartify({
+    content: [
+      'What we mean---we really mean it---is this has to be on time.'
+      //           ^                   ^
+    ]
+  }),
+  {
+    content: [
+      'What we mean—we really mean it—is this has to be on time.'
+      //           ^                 ^
+    ]
+  }
+)
+```
+
+Two hyphens make an em-dash:
+
+```javascript
+assert.deepStrictEqual(
+  smartify({
+    content: [
+      'July 3--4'
+      //     ^
+    ]
+  }),
+  {
+    content: [
+      'July 3–4'
+      //     ^
+    ]
+  }
+)
+```
+
+Three periods make an ellipsis:
+
+```javascript
+assert.deepStrictEqual(
+  smartify({
+    content: [
+      'Who knows...?'
+      //        ^
+    ]
+  }),
+  {
+    content: [
+      'Who knows…?'
+      //        ^
+    ]
+  }
+)
+```
 Recurses the full form:
 
 ```javascript
