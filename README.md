@@ -51,6 +51,12 @@ assert.deepStrictEqual(
   { content: ['The product comes “as is”.'] }
   //                             ^     ^
 )
+
+assert.deepStrictEqual(
+  smartify({ content: ['such "moral rights" are included'] }),
+  { content: ['such “moral rights” are included'] }
+  //                ^            ^
+)
 ```
 
 Quotes in definitions and term uses:

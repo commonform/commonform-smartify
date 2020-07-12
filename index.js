@@ -28,8 +28,10 @@ function replacePunctuation (string) {
 
     // Quotes
     .replace(/ '/g, ' ' + LEFT_SINGLE)
+    .replace(/' /g, LEFT_SINGLE + ' ')
     .replace(/'/g, RIGHT_SINGLE)
     .replace(/ "/g, ' ' + LEFT_DOUBLE)
+    .replace(/" /g, RIGHT_DOUBLE + ' ')
     .replace(/"([.?!])/g, RIGHT_DOUBLE + '$1')
     .replace(/"$/g, RIGHT_DOUBLE)
     .replace(/"/g, LEFT_DOUBLE)
