@@ -33,6 +33,16 @@ assert.deepStrictEqual(
 )
 ```
 
+Quotation marks after plurals:
+
+```javascript
+assert.deepStrictEqual(
+  smartify({ content: ["affiliates' personnel"] }),
+  { content: ['affiliates’ personnel'] }
+  //                     ^
+)
+```
+
 Multiple quotation marks in one string:
 
 ```javascript
