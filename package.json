@@ -9,14 +9,9 @@
   "license": "BlueOak-1.0.0",
   "files": [],
   "devDependencies": {
-    "defence-cli": "^3.0.1",
-    "nyc": "^15.0.1",
-    "standard": "^14.3.3",
-    "standard-markdown": "^6.0.0"
+    "defence-cli": "^3.0.1"
   },
   "scripts": {
-    "coverage": "nyc --reporter=lcov --reporter=text npm run test",
-    "lint": "standard && standard-markdown",
     "test": "defence -i javascript README.md | sed \"s!from 'commonform-smartify'!from './index.js'!\" | node"
   }
 }
