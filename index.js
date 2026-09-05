@@ -1,5 +1,5 @@
-module.exports = function recurse (form) {
-  var content = form.content
+export default function recurse (form) {
+  const content = form.content
   content.forEach(function (element, index) {
     if (typeof element === 'string') {
       content[index] = replacePunctuation(element)
@@ -20,10 +20,10 @@ module.exports = function recurse (form) {
 }
 
 function replacePunctuation (string) {
-  var LEFT_SINGLE = '‘'
-  var RIGHT_SINGLE = '’'
-  var LEFT_DOUBLE = '“'
-  var RIGHT_DOUBLE = '”'
+  const LEFT_SINGLE = '‘'
+  const RIGHT_SINGLE = '’'
+  const LEFT_DOUBLE = '“'
+  const RIGHT_DOUBLE = '”'
   return string
 
     // Quotes

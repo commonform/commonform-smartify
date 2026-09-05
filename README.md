@@ -13,8 +13,8 @@ You may want to clone a form before smartifying: `var smartified = JSON.parse(JS
 ## Examples
 
 ```javascript
-var smartify = require('commonform-smartify')
-var assert = require('assert')
+import smartify from 'commonform-smartify'
+import assert from 'node:assert'
 
 assert.deepStrictEqual(
   smartify({ content: ["The package's first test!"] }),

@@ -3,21 +3,20 @@
   "version": "1.1.2",
   "description": "replace ASCII punctuation with Unicode punctuation quotes in Common Forms",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (https://kemitchell.com/)",
+  "type": "module",
+  "main": "index.js",
   "repository": "kemitchell/commonform-smartify",
   "license": "BlueOak-1.0.0",
-  "files": [
-    "index.js"
-  ],
+  "files": [],
   "devDependencies": {
     "defence-cli": "^3.0.1",
     "nyc": "^15.0.1",
-    "replace-require-self": "^1.1.1",
     "standard": "^14.3.3",
     "standard-markdown": "^6.0.0"
   },
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text npm run test",
     "lint": "standard && standard-markdown",
-    "test": "cat README.md | defence -i javascript | replace-require-self | node"
+    "test": "defence -i javascript README.md | sed \"s!from 'commonform-smartify'!from './index.js'!\" | node"
   }
 }
